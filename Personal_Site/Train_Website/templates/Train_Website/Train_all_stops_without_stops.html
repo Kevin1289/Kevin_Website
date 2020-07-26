@@ -84,6 +84,7 @@ p3{
                     <input type="text" id="train_wanted" name="train_wanted" placeholder="Enter Train Line">
                     <input type="submit" name="Submit">
                 </form>
+                <a href="{% url 'Train_Choose_Service' %}"><u>Back</u></a>
                 <h6>Below are the Train lines provided by the MTA</h6>
                 <img src="{% static 'images/Train_Options.jpg' %}" alt ='MTA Lines ' style="width:400px;height:300px;">
                 <a href="https://new.mta.info/maps" target="_blank">Click here to access MTA maps</a>

@@ -4,13 +4,14 @@
 
 <head>
 <style>
-body{
+#background{
 	background-color: #F8F8F8!!important;
 	text-align: center;
 	background-image: url("/static/images/MTA_Train_Pic.jpg");
 	background-position: center;
     background-repeat:no-repeat;
-    background-size:120%;
+    background-size:100%;
+    background-attachment: auto;
 }
 
 h1{
@@ -72,7 +73,7 @@ p3{
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-
+<div id = 'background'>
 <br>
 <h1 style="color:#ff4000;" ><u><b>MTA Assistant App</b></u></h1>
 {% if messages %}
@@ -137,5 +138,6 @@ p3{
 </div>
     <br>
     <p id="info" ><b>Phone Number: (917) 618-8958 • Email: sxw207@nyu.edu • <a href="https://www.linkedin.com/in/shixinkevinwu" target="_blank">Linkedin Profile</a> • <a href="https://my.indeed.com/p/shixinw-aqtitv7" target="_blank"> Indeed Profile</b></b></a> </p>
+</div>
 </body>
 </html>

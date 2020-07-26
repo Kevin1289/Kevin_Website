@@ -26,6 +26,20 @@ h4{
     text-align: center;
 }
 
+.button {
+  background-color: #d785e7; 
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 2px 4px;
+  width: 30%;
+}
+
 p{
     text-indent: 50px;
     color:red;
@@ -44,12 +58,9 @@ p3{
     text-align: left!important;
 }
 
-#profile-pic{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-left: auto;
-    margin-right: auto;
+#history{
+    display: flex;
+    justify-content: center;
 }
 #profile-wrapper{
     text-align: center;
@@ -90,6 +101,9 @@ p3{
                     <input type="text" id="Service" name="Service" placeholder="Enter Service">
                     <input type="submit" name="Submit">
                 </form>
+                <div id = 'history'>
+                    <a class="button" type='button' href="{% url 'history' %}" >Search History</a>
+                </div> 
                 <h6>Below are the Train services provided by the MTA</h6>
                 <img src="{% static 'images/Train_Options.jpg' %}" alt ='MTA Lines ' style="width:400px;height:300px;">
                 <a href="https://new.mta.info/maps" target="_blank">Click here to access MTA maps</a>

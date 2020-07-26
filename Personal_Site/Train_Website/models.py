@@ -1,11 +1,6 @@
 from django.db import models
-
-# Create your models here.
 from django.core.validators import RegexValidator
-
-from django.contrib.auth.models import (
-		BaseUserManager, AbstractBaseUser
-	)
+from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
 
 USERNAME_REGEX = '^[a-zA-Z0-9.+-]*$'
 
@@ -53,14 +48,21 @@ class MyUser(AbstractBaseUser):
 	full_name = models.CharField(
 					max_length=300,
 					unique=False,
-					default = ''
+					default = '',
 				)
 	email = models.EmailField(
 			max_length=255,
 			unique=True,
 			verbose_name='email address',
-			default = ''
+			default = '',
 		)
+	
+	search_history = models.TextField(
+			unique=False,
+			default = '',
+			blank=True,
+		)
+
 	is_admin = models.BooleanField(default=False)
 	is_staff = models.BooleanField(default=False)
 

@@ -11,12 +11,13 @@ from .models import MyUser
 class UserAdmin(BaseUserAdmin):
 	add_form = UserCreationForm
 
-	list_display = ('full_name', 'username','email','is_admin', 'id')
+	list_display = ('full_name', 'email', 'username', 'is_admin', 'id')
 	list_filter = ('is_admin',)
 
 	fieldsets = (
-			(None, {'fields': ('username','email','full_name','password')}),
-			('Permissions', {'fields': ('is_admin',)})
+			(None, {'fields': ('email', 'username', 'full_name','password')}),
+			('Permissions', {'fields': ('is_admin',)}),
+			('History', {'fields': ('search_history',)}),
 		)
 	search_fields = ('username','email', 'full_name', 'id')
 	ordering = ('username','email','full_name')

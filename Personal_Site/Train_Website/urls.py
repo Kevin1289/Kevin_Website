@@ -9,4 +9,5 @@ urlpatterns = [
     path('Train_Choose_Service', views.Train_Choose_Service, name='Train_Choose_Service'),
     url(r'^all_stops/$', views.all_stops, name='all_stops'),
     url(r'^common_stations/$', views.common_stations, name='common_stations'),
+    path('history', views.History, name='history'),
 ]
