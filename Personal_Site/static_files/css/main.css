@@ -1,0 +1,47 @@
+
+body{
+	background-color:#4dd2ff!important;
+}
+
+h3{
+    text-align: center;
+}
+
+h4{
+}
+
+p1{
+    text-indent: 50px;
+
+}
+
+p2{
+    text-indent: 50px;
+
+}
+
+p3{
+    text-align: left;
+
+}
+
+p4{
+    text-indent: 50px;
+
+}
+
+p9{
+    text-align: center;
+
+}
+
+#profile-pic{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#profile-wrapper{
+    text-align: center;
+}

@@ -1,0 +1,104 @@
+{% load static %}
+
+<html>
+
+<head>
+<style>
+body{
+	background-color: #F8F8F8!!important;
+	text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+}
+
+p{
+    text-indent: 50px;
+}
+
+p3{
+    text-align: left;
+}
+
+#info{
+    text-align: center!important;
+}
+
+#profile-pic{
+    width: 200px;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content{
+    width: 100px;
+    height: 125px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#profile-wrapper{
+    text-align: center;
+}
+
+</style>
+</head>
+
+<head>
+	<title>iFeeder</title>
+	<!--<link href="{% static '/css/main.css'  %}" rel="stylesheet" type="text/css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<br>
+<div class = 'container '>
+    <div class = 'row' >
+        <div class = 'col-md-7' >
+            <div class = 'card card-body text-black bg-light mb-5 h-100 border-info' id = 'profile-wrapper' >
+                <img id='profile-pic' src="{% static '/images/iFeeder_pic.JPG' %}">
+                <br>
+                <h4>iFeeder - State of the Art Pet Feeding System</h4>
+                <p3>
+                    <ul>
+                        <li>Shi Xin (Kevin) Wu: Chief Hardware Engineer & Programmer</li>
+                        <li>Project Goal: Designed a self-sufficient, innovative, and cost-efficient product with the ability to dispense food, water, and snacks for a variety of animals</li>
+                        <li>Project Components: Created professional marketing pitch, prototype, program, advertisement</li>
+                        <li>Utilized: Autodesk Fusion 360, Arduino IDE, Microsoft Project, Microsoft Powerpoint, Cura 3D Printing Software, Adobe Illustrator</li>
+                    </ul>
+                </p3>
+            </div>
+        </div>
+
+        <div class = 'col-md-5' >
+            <div class = 'card card-body text-black bg-light mb-5 h-100 border-info' id = 'profile-wrapper' >
+                <h4><u>Key Content</u></h4><br>
+                <div id='info'>
+                    <a href='https://onedrive.live.com/View.aspx?resid=E1F59268200FA693!3617&wdSlideId=256&wdModeSwitchTime=1595739978409&authkey=!AKxu6QC7lPchoqU' target="blank">
+                    <img id="content" src="{% static '/images/Sales_pitch.PNG' %}"><br>
+                    <t>Sales Pitch Presentation</t><br><br></a>
+
+                    <a href='https://1drv.ms/w/s!ApOmDyBokvXhnCSSzOD1RUsCGMvy?e=hNmklf' target="blank">
+                    <img id="content" src="{% static '/images/flowchart.JPG' %}"><br>
+                    <t>Pseudocode Flowchart</t><br><br></a>
+
+                    <a href='https://1drv.ms/v/s!ApOmDyBokvXhnCfNR65MFw04esBf' target="blank">
+                    <img id="content" src="{% static '/images/AD_pic.JPG' %}"><br>
+                    <t>iFeeder Advertisement</t><br><br></a>
+
+                    <a href='https://onedrive.live.com/View.aspx?resid=E1F59268200FA693!3621&wdAccPdf=0&authkey=!AI7Q9kIGdWORb7M' target="blank">
+                        <img id="content" src="{% static '/images/PIC.PNG' %}"><br>
+                        <t>iFeeder Diagrams</t></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <p id="info">Phone Number: (917) 618-8958 • Email: sxw207@nyu.edu • <a href="www.linkedin.com/in/shixinkevinwu">Linkedin Profile</a> • <a href="https://my.indeed.com/p/shixinw-aqtitv7"> Indeed Profile</a>• <a href="{% url 'homepage' %}"><u>Back to Resume Page</u></a> </p>
+</body>
+
+</html>

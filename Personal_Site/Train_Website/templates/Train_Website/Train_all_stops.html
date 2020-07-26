@@ -1,0 +1,110 @@
+{% load static %}
+
+<html>
+
+<head>
+<style>
+body{
+	background-color: #F8F8F8!!important;
+	text-align: center;
+	background-image: url("/static/images/MTA_Train_Pic.jpg");
+	background-position: center;
+    background-repeat:no-repeat;
+    background-size:120%;
+}
+
+h1{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+}
+
+p{
+    text-indent: 50px;
+    color:red;
+
+}
+
+p3{
+    text-align: left;
+}
+
+#info{
+    text-align: center!important;
+}
+
+#a{
+    text-align: left!important;
+}
+
+#profile-pic{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#profile-wrapper{
+    text-align: center;
+}
+
+
+</style>
+</head>
+
+<head>
+	<title>Train_Start</title>
+	<!--<link href="{% static '/css/main.css'  %}" rel="stylesheet" type="text/css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<br>
+<h1 style="color:#ff4000;" ><u><b>MTA Assistant App</b></u></h1>
+<br>
+<div class = 'container first-info' >
+    <div class = 'row' >
+        <div class = 'col-md-5' >
+            <div class = 'card card-body text-black bg-light mb-5 border-info' id = 'profile-wrapper'>
+                
+                <h3><b>Show Stops</b></h3>
+                <form method="post" action= '{% url "all_stops" %}'>
+                    {% csrf_token %}
+                    <label for="show_stop_train">Please enter a train line.<br>If you are done with this service, please enter 'stop'.</label>
+                    {% for message in messages %}
+                        <t style='color: red;'>{{message}}</t>
+                    {% endfor %}
+                    <input type="text" id="train_wanted" name="train_wanted" placeholder="Enter Train Line">
+                    <input type="submit" name="Submit">
+                </form>
+                <h6>Below are the Train lines provided by the MTA</h6>
+                <img src="{% static 'images/Train_Options.jpg' %}" alt ='MTA Lines ' style="width:400px;height:300px;">
+                <a href="https://new.mta.info/maps" target="_blank">Click here to access MTA maps</a>
+                <a href="https://new.mta.info/" target="_blank">Click here to access MTA site</a>
+            </div>
+        </div>
+        <div class = 'col -md=7' style="text-align: center;">
+            <div class = 'card card-body text-black bg-light mb-5 h-100 border-info'>
+                    <h3><u>Train: {{ entered }}</u></h3><br>
+                    <h4>From: {{start}}<br>To<br>{{end}}</h4>
+                    {% for stop in stops_for_train %}
+                        <ul><t style='color:blue'>{{stop}}</t></ul>
+                    {% endfor %}
+                <br>
+                <h3><b>MTA Map</b></h3>
+                <div class="container">
+                    <embed src="{% static 'files/MTA_Map.pdf' %}" type="application/pdf" width="100%" height="650px" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <p id="info">Phone Number: (917) 618-8958 • Email: sxw207@nyu.edu • <a href="www.linkedin.com/in/shixinkevinwu">Linkedin Profile</a> • <a href="https://my.indeed.com/p/shixinw-aqtitv7"> Indeed Profile</a> • <a href="{% url 'homepage' %}"><u>Back to Resume Page</u></a></p>
+</body>
+</html>

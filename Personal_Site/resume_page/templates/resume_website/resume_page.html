@@ -1,0 +1,220 @@
+{% load static %}
+
+<html>
+
+<head>
+<style>
+body{
+	background-color: #F8F8F8!!important;
+	text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+}
+
+p{
+    text-indent: 50px;
+}
+
+p3{
+    text-align: left;
+}
+
+#info{
+    text-align: center!important;
+}
+
+#profile-pic{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#profile-wrapper{
+    text-align: center;
+}
+
+</style>
+</head>
+
+<head>
+	<title>Kevin Wu</title>
+	<!--<link href="{% static '/css/main.css'  %}" rel="stylesheet" type="text/css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<br>
+<div class = 'container '>
+    <div class = 'row' >
+        <div class = 'col-md-5' >
+            <div class = 'card card-body text-black bg-light mb-5 h-100 border-info' id = 'profile-wrapper' >
+                <img id='profile-pic' src="{% static '/images/profile_pic.PNG' %}">
+                <br>
+                <h4>Shi Xin (Kevin) Wu</h4>
+                <p3>
+                    <ul>
+                        <li> University: NYU Tandon School of Engineering</li>
+                        <li>Major: Computer Science</li>
+                        <li>Minor: Cyber-Security</li>
+                    </ul>
+                </p3>
+                <div class = 'links'>
+                    <a href="https://www.linkedin.com/in/shi-xin-wu-6b178719b/" target="_blank" > <img src="{% static 'images/linkedin.png' %}" alt="Linkedin Profile" width="40" height="40"></a>
+
+                    <a href="https://my.indeed.com/p/shixinw-aqtitv7" target="_blank" > <img src="{% static 'images/indeed_logo.jpeg' %}" alt="Indeed Profile" width="40" height="40"></a>
+                </div>
+            </div>
+        </div>
+        <div class = 'col -md=7'>
+            <div class = 'card card-body text-black bg-light mb-5 h-100 border-info'>
+                <h3><u><b>About Me</b></u></h3>
+                <p>I am a motivated undergraduate student looking for an opportunity to express my passion and love for programming.
+                    Although I am majoring in computer science, I also have experience in education and mechanical engineering. Although I
+                    lack work experience in the field of programming, I am open-minded and make opportunities for myself through personal projects
+                    which allow me to not only learn new material, but also to refine past skills.
+                </p>
+                <p>
+                    I currently work at Leap Education as a Multi-Subject Tutor where I learn to be flexible and persistent. The customer service
+                    skills that I learned from my internship at the Brooklyn Public Library has made me a more effective communicator. I am looking
+                    for any opportunity that will allow me to not only grow in the field of programming, but also as a professional worker.
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class = 'row'>
+        <div class = 'col-md-6'>
+            <div class = 'card card-body border-info'>
+                <h3><u><b>What I Know</b></u></h3>
+                <h5>Programming Languages</h5>
+                <ul>
+                    <li>Python</li>
+                    <li>C++ (Arduino Programming Platform)</li>
+                    <li>HTML </li>
+                    <li>CSS (Basic)</li>
+                </ul>
+
+                <h5>Frameworks/Softwares</h5>
+                <ul>
+                    <li> <a href="https://www.djangoproject.com/" target="blank"> Django </a> (Front End & Back End)</li>
+                    <li> <a href="https://www.arduino.cc/" target="'blank"> Arduino </a> Programming Platform</li>
+                </ul>
+
+                <h5>Additional Skills</h5>
+                <ul>
+                    <li>
+                        Autodesk Fusion 360, Revit Platform, Autodesk Fusion 360, Arduino Platform, VEX Platform, LabVIEW, MakerBot, RoboCell,
+                        CNC Motion, Cura 3D Printing Software, Microsoft Office, Adobe Illustrator, Inventor Certified Professional,
+                        Autodesk Inventor, Zoom Video Communications
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class = 'col -md=6'>
+            <div class = 'row h-50'>
+                <div class = 'card card-body border-info'>
+                    <h3><u><b>Short Term Goals</b></u></h3>
+                    <p>
+                        After programming for over two years, I am ready to apply my skills in a professional setting.
+                        From my experiences with past jobs and internships as well as projects, I believe that I am ready to
+                        bring my skills to a team that I will be able to have a positive impact. I am looking to expand my
+                        knowledge through experience that not only relate to programming but other fields as well.
+
+                    </p>
+                </div>
+            </div>
+                <br>
+            <div class = 'row h-40'>
+                <div class = 'card card-body border-info'>
+                <h3><u><b>Long Term Goals</b></u></h3>
+                    <p>
+                        From a young age, I loved to take electronics apart to explore the mystery behind their simple exterior. It has been this curiosity that has driven me to
+                        become a programmer. I want to be able to understand the complicated languages used by the devices that we rely on every day so that I can design and
+                        program my own devices/applications for all to use.
+                    </p>
+            </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class = 'row'>
+        <div class = 'card card-body border-info'>
+            <h3><b><u>Projects</u></b></h3><br>
+
+            <a href="http://cliqueio.com/" target="_blank" class="project" style="color:#3452eb;"><h5 style="text-align:left;"><b>Clique</b> </a> (Django: Python, HTML(Basic), CSS(Basic)) (Group Project)<span style="float:right;"> Spring 2020 </span> </h5>
+            <ul>
+                <li>Created a Website using Django(Open-Source Web Framework)</li>
+                <li>Learned basic backend work using python</li>
+                <li>Learned basic frontend work and styling using HTML and CSS</li>
+                <li>Utilized: Pyhton, HTML, CSS</li>
+            </ul>
+            <br>
+            <a href="{% url 'homepage' %}" class="project" style="color:#3452eb;"><h5 style="text-align:left;"><b>Personal Website</a></b> (Python, Django: HTML) (Personal Project)<span style="float:right;"> Spring 2020 </span> </h5>
+            <ul>
+                <li>Created a Website using HTML and linked old projects</li>
+                <li>Learned basic front and backend work as well as styling</li>
+                <li>Utilized: HTML, Python</li>
+            </ul>
+            <br>
+
+            <a href="{% url 'login' %}" class="project" style="color:#3452eb;"><h5 style="text-align:left;"><b>Train Customer Support System</a></b> (Python) (Personal Project)<span style="float:right;"> Fall 2019 </span> </h5>
+            <ul>
+                <li>Developed a program using Java to organize train stops</li>
+                <li>Analyzes trains and allows for easier understanding of the train routes</li>
+                <li>Utilized: Python, Files, Loops, Classes, Lists, Dictionaries, Functions</li>
+            </ul>
+            <br>
+
+            <a href="{% url 'iFeeder' %}" class="project" style="color:#3452eb;"><h5 style="text-align:left;"><b>iFeeder (The Automatic Pet Feeder)</b> (Product Design) (Group Project)</a><span style="float:right;"> Fall 2019 </span> </h5>
+            <ul>
+                <li>Role: Chief Hardware Engineer & Programmer</li>
+                <li>Designed a self-sufficient, innovative, and cost-efficient product with the ability to dispense food, water, and snacks for a variety of animals.</li>
+                <li>Created professional marketing pitch, prototype, program, advertisement</li>
+                <li>Utilized: Autodesk Fusion 360, Arduino IDE, Microsoft Project, Microsoft Powerpoint, Cura 3D Printing Software, Adobe Illustrator</li>
+            </ul>
+        </div>
+    </div>
+    <br>
+
+        <div class = 'row'>
+            <div class = 'card card-body border-info'>
+                <h3><b><u>Experiences</u></b></h3><br>
+                <h5><b>Multi-Subject Teacher </b>Leap Education (Job), <i> New York, NY </i> <span style="float:right;">Dec 2018 - Present</span></h5>
+                <ul>
+                    <li>Prepared interactive lessons to facilitate personalized learning for each student</li>
+                    <li>Provided individual structure to lessons to assist grasping of material, graded classwork, and homework, and managed classroom order</li>
+                </ul>
+                <br>
+
+                <h5><b>T4 Education and Technology Intern </b> Brooklyn Public Library Leonard Branch, <i> Brooklyn, NY </i> <span style="float:right;">June 2018</span></h5>
+                <ul>
+                    <li>Provided technology to partons including personalized technology usage, troubleshooting hardware, and software issues.</li>
+                    <li>Conducted programming classes for kids ages 7-12 on coding skills and robotics using LEGO.</li>
+                    <li>Supervised and led NYC First Lego Robotics Team which competed in a borough tournament.</li>
+                </ul>
+                <br>
+
+                <h5><b>Club President: United Nations Awareness Club</b> Brooklyn Technical High School, <i> Brooklyn, NY </i> <span style="float:right;">June 2019</span></h5>
+                <ul>
+                    <li>Found the club. Planned and organized meetings. Prepared marketing materials.</li>
+                    <li>Raised awareness of problems that the United Nations face to students.</li>
+                </ul>
+                <br>
+            </div>
+        </div>
+    <br>
+    </div>
+</div>
+    <p id="info">Phone Number: (917) 618-8958 • Email: sxw207@nyu.edu • <a href="www.linkedin.com/in/shixinkevinwu">Linkedin Profile</a> • <a href="https://my.indeed.com/p/shixinw-aqtitv7"> Indeed Profile</a> </p>
+</body>
+
+</html>
