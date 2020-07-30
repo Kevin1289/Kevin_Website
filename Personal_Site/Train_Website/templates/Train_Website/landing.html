@@ -75,13 +75,6 @@ p3{
 <div id = 'background'>
 <br>
 <h1 style="color:#ff4000;" ><u><b>MTA Assistant App</b></u></h1>
-{% if messages %}
-  <ul class="messages">
-    {% for message in messages %}
-      <li class="{{ message.tags }}" style="color:Red" >{{ message }}</li>
-    {% endfor %}
-  </ul>
-{% endif %}
 <br>
 <div class = 'container first-info' >
     <div class = 'row' >
@@ -94,6 +87,10 @@ p3{
 
                 <form method="POST" action= '{% url "login" %}'>
                     {% csrf_token %}
+                    {% for message in messages %}
+                        <li style="color:red"><t style="color:red">{{ message }}</t></li><br>
+                    {% endfor %}
+                    
                     {% for error in form.non_field_errors %}
                         <li style="color:red"><t style="color:red">{{error}}</t></li><br>
                     {% endfor %}

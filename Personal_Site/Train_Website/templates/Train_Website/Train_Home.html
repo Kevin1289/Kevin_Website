@@ -59,7 +59,7 @@ p3{
 }
 
 #history{
-    display: flex;
+    /* display: flex; */
     justify-content: center;
 }
 #profile-wrapper{
@@ -102,7 +102,8 @@ p3{
                     <input type="submit" name="Submit">
                 </form>
                 <div id = 'history'>
-                    <a class="button" type='button' href="{% url 'history' %}" >Search History</a>
+                    <a class="button" type='button' href="{% url 'history' %}" >Search History</a><br>
+                    <a class="button" type='button' href="{% url 'logout' %}" >Logout</a>
                 </div> 
                 <h6>Below are the Train services provided by the MTA</h6>
                 <img src="{% static 'images/Train_Options.jpg' %}" alt ='MTA Lines ' style="width:400px;height:300px;">

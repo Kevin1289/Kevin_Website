@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^all_stops/$', views.all_stops, name='all_stops'),
     url(r'^common_stations/$', views.common_stations, name='common_stations'),
     path('history', views.History, name='history'),
+    path('logout', views.logout_view, name='logout'),
 ]

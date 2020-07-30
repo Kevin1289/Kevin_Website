@@ -224,3 +224,15 @@ def History(request):
     args = {'organized_his': organized_his}
     return render(request, 'Train_Website/history.html', args)
     #return HttpResponse('hereeeeeeeeee')
+
+
+
+def logout_view(request):
+    try:
+        name = request.user.full_name
+        logout(request)
+        messages=[]
+        messages.append(name + ' has successfully logged out. Than you for using the MTA Assistant App!')
+        return render(request, 'Train_Website/landing.html', {'messages':messages})
+    except:
+        return render(request, 'Train_Website/landing.html')
