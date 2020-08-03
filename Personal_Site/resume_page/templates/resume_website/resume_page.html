@@ -1,220 +1,435 @@
 {% load static %}
 
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-<style>
-body{
-	background-color: #F8F8F8!!important;
-	text-align: center;
-}
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/resume_page.css' %}"> -->
+    <!-- NEW -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <!-- <link rel="stylesheet" href="{% static 'css/resume_page.css' %}"> -->
 
-h3{
-    text-align: center;
-}
+    <title>Kevin Wu</title>
 
-h4{
-    text-align: center;
-}
 
-p{
-    text-indent: 50px;
-}
-
-p3{
-    text-align: left;
-}
-
-#info{
-    text-align: center!important;
-}
-
-#profile-pic{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-#profile-wrapper{
-    text-align: center;
-}
-
-</style>
-</head>
-
-<head>
-	<title>Kevin Wu</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
 	<!--<link href="{% static '/css/main.css'  %}" rel="stylesheet" type="text/css">-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+    <style type="text/css">
+        .carousel-item {
+          height: 100vh;
+          min-height: 300px;
+          background: no-repeat center center scroll;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+
+        .h2 {
+          margin: 60px;
+          text-align: justify;
+        }
+
+        #background{
+            background-image: url("/static/images/background_img.jpg");
+        }
+        #Kevin_Sec{
+            background-image: url("/static/images/background_img.jpg");
+            /* display: flex; */
+            justify-content: center;
+        }
+
+        #Slide1{
+            display: flex;
+            justify-content: center;
+        }
+
+        #Slide1 > div {
+        width: 90%;
+        margin: 8%;
+        text-align: center;
+        line-height: 100%;
+        font-size: 40px;
+        }
+
+        #Slide2{
+            display: flex;
+            justify-content: center;
+        }
+
+        #Slide2 > div{
+            width: 70%;
+            margin: 4%;
+            text-align: center;
+            line-height: 100%;
+            font-size: 40px;
+        }
+
+
+        #Slide3{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 0;
+        }
+
+        #slide3_title{
+            text-align: center;
+            line-height: 1vw;
+            font-size: 40px;
+        }
+
+        .carousel-fade .carousel-item {
+            opacity: 0;
+            transition-duration: 1s;
+            transition-property: opacity;
+        }
+
+        .carousel-fade .carousel-item.active,
+        .carousel-fade .carousel-item-next.carousel-item-left,
+        .carousel-fade .carousel-item-prev.carousel-item-right {
+            opacity: 1;
+        }
+
+        .carousel-fade .active.carousel-item-left,
+        .carousel-fade .active.carousel-item-right {
+            opacity: 0;
+        }
+
+        .carousel-fade .carousel-item-next,
+        .carousel-fade .carousel-item-prev,
+        .carousel-fade .carousel-item.active,
+        .carousel-fade .active.carousel-item-left,
+        .carousel-fade .active.carousel-item-prev {
+            transform: translateX(0);
+            transform: translate3d(0, 0, 0);
+        }
+        #profile-pic{
+            border-radius: 100%;
+            width: 33vw;
+            /* height: auto; */
+            /* width: 150%;
+            border-radius: 100%; */
+            margin-left: 3vw;
+            /* padding-top: 0%; */
+        }
+
+        #white_text{
+            font-weight: bold;
+            font-size: 3vw;
+        }
+
+        #text{
+            color:#a3d31e;
+            line-height: 1.6;
+            font-size: 2.3vw;
+        }
+
+        .rainbow {
+            text-align: center;
+            text-decoration: underline;
+            font-size: 32px;
+            font-family: monospace;
+            letter-spacing: 5px;
+        }
+        .rainbow_text_animated {
+            background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbow_animation 6s ease-in-out infinite;
+            background-size: 400% 100%;
+        }
+
+        @keyframes rainbow_animation {
+            0%,100% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 100% 0;
+            }
+        } 
+
+        #chart_wrap{
+            position: relative;
+            padding-bottom: 100%;
+            height: 0;
+            overflow:hidden;
+        }
+        
+        #piechart_3d {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width:100%;
+            height:500px;
+        }
+    </style>
+    <!-- Pie Chart -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Language', 'Programming Knoledge Distribution'],
+          ['Python', 60],
+          ['HTML', 25],
+          ['CSS', 10],
+          ['C++', 5],
+        ]);
+
+        // var titleTextStyle = {color: '#a34f8b', fontSize: 32};
+
+        var options = {
+            backgroundColor: 'transparent',
+            is3D: true,
+            left:0,top:0,'width':700, 'height':500,
+            pieSliceBorderColor: 'orange',
+            titleTextStyle: {color: '#a34f8b', fontSize: 32},
+            pieSliceTextStyle: {color: 'white', fontName: 'Arial', fontSize: '20', bold:true},
+            legend: {position: 'bottom', textStyle: {color: 'red', fontSize: 20, bold:true}},
+            chartArea:{left:'3%',top:0,width:'100%',height:'90%'}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
 </head>
-<body>
+<body style='background-color: #00d8e7!important;'>
+    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="20000">
+        <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3" class=""></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
 
-<br>
-<div class = 'container '>
-    <div class = 'row' >
-        <div class = 'col-md-5' >
-            <div class = 'card card-body text-black bg-light mb-5 h-100 border-info' id = 'profile-wrapper' >
-                <img id='profile-pic' src="{% static '/images/profile_pic.PNG' %}">
-                <br>
-                <h4>Shi Xin (Kevin) Wu</h4>
-                <p3>
-                    <ul>
-                        <li> University: NYU Tandon School of Engineering</li>
-                        <li>Major: Computer Science</li>
-                        <li>Minor: Cyber-Security</li>
-                    </ul>
-                </p3>
-                <div class = 'links'>
-                    <a href="https://www.linkedin.com/in/shi-xin-wu-6b178719b/" target="_blank" > <img src="{% static 'images/linkedin.png' %}" alt="Linkedin Profile" width="40" height="40"></a>
-
-                    <a href="https://my.indeed.com/p/shixinw-aqtitv7" target="_blank" > <img src="{% static 'images/indeed_logo.jpeg' %}" alt="Indeed Profile" width="40" height="40"></a>
+        <div class="carousel-item active" id='background'>
+                <!-- Slide One -->
+                <div id ='Slide1'>
+                    <div class="flex-container">
+                        <div class = 'row' >
+                            <div class = 'col-md-5' >
+                                <div class = 'card card-body mb-2 text-black bg-transparent' style='border: none'>
+                                    <img id='profile-pic' src="{% static '/images/profile_pic.PNG' %}">
+                                </div>
+                            </div>
+                            <div class = 'col -md=7'>
+                                <div class = 'card card-body mb-5 text-black bg-transparent' style='border: none'>
+                                    <br>
+                                    <h1 class="rainbow rainbow_text_animated" id = 'white_text'><u>Shi Xin (Kevin) Wu</u></h1><br>
+                                    <t id ='text'>                                                
+                                            University: NYU Tandon School of Engineering<br>
+                                            Major: Computer Science<br>
+                                            Minor: Cyber-Security<br>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class = 'col -md=7'>
-            <div class = 'card card-body text-black bg-light mb-5 h-100 border-info'>
-                <h3><u><b>About Me</b></u></h3>
-                <p>I am a motivated undergraduate student looking for an opportunity to express my passion and love for programming.
-                    Although I am majoring in computer science, I also have experience in education and mechanical engineering. Although I
-                    lack work experience in the field of programming, I am open-minded and make opportunities for myself through personal projects
-                    which allow me to not only learn new material, but also to refine past skills.
-                </p>
-                <p>
-                    I currently work at Leap Education as a Multi-Subject Tutor where I learn to be flexible and persistent. The customer service
-                    skills that I learned from my internship at the Brooklyn Public Library has made me a more effective communicator. I am looking
-                    for any opportunity that will allow me to not only grow in the field of programming, but also as a professional worker.
-                </p>
+            <!--end first-->
+            <div class="carousel-item" id='Kevin_Sec'>
+                <div id ='Slide2'>
+                    <div class="flex-container">
+                        <div class = 'row' >
+                                <div class = 'card card-body mb-5 text-black bg-transparent' style='border: none;'>
+                                    <h1 class="rainbow rainbow_text_animated" style='font-size:3vw; font-weight: bold;' id = 'About_me'><b>About Me</b></h1>
+                                    <p style='text-align: left; font-size:2vw; text-indent: 3vw; color: #a3d31e; line-height: 3vw;'>
+                                        I am a motivated undergraduate student attending NYU who makes opportunities to express my passion and love for programming.
+                                        I enjoy exploring the world of technology during my free time and have mastered Web Developement. Although I major in 
+                                        Computer science, I enjoy teaching and exploring the field of Mechanical Engineering. 
+                                        When I'm not programming, I like to work out and catch up on shows. I love to meet new people and develope new connections so feel 
+                                        free to reach out to me through my email. 
+                                    </p>
+                                    <p style='text-align: left; font-size:2vw; text-indent: 2vw; color: red;'>
+                                        
+                                    </p>
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="carousel-caption d-none d-md-block">
+                    <h3>Sec Slide</h3>
+                    <p>This is a description for the first slide.</p>
+                </div> -->
             </div>
-        </div>
-    </div>
-    <br>
-    <div class = 'row'>
-        <div class = 'col-md-6'>
-            <div class = 'card card-body border-info'>
-                <h3><u><b>What I Know</b></u></h3>
-                <h5>Programming Languages</h5>
-                <ul>
-                    <li>Python</li>
-                    <li>C++ (Arduino Programming Platform)</li>
-                    <li>HTML </li>
-                    <li>CSS (Basic)</li>
-                </ul>
+            <!--end sec-->
 
-                <h5>Frameworks/Softwares</h5>
-                <ul>
-                    <li> <a href="https://www.djangoproject.com/" target="blank"> Django </a> (Front End & Back End)</li>
-                    <li> <a href="https://www.arduino.cc/" target="'blank"> Arduino </a> Programming Platform</li>
-                </ul>
+            <div class="carousel-item" id='background'>
+                <div id='slide3_title'>
+                    <br><br>
+                    <h1 class="rainbow rainbow_text_animated" style='font-size:3vw; font-weight: bold;'><b>Skills</b></h1>
+                </div>
+                <div id ='Slide3'>
+                    <div class="flex-container">
+                        <div class = 'row' >
+                            <div class = 'col-md-6' >
+                                <div class = 'card card-body bg-transparent' style='border: none;color: #a3d31e; margin-left: 14vw; height: 50%; width: 70%;'>
+                                    <t style='font-size:2vw;'>Programming Languages</t>
+                                    <ul>
+                                        <li style='font-size:1.2vw;'>Python</li>
+                                        <li style='font-size:1.2vw;'>HTML</li>
+                                        <li style='font-size:1.2vw;'>CSS</li>
+                                        <li style='font-size:1.2vw;'>C++ (Arduino Programming Platform)</li>
+                                    </ul>	
 
-                <h5>Additional Skills</h5>
-                <ul>
-                    <li>
-                        Autodesk Fusion 360, Revit Platform, Autodesk Fusion 360, Arduino Platform, VEX Platform, LabVIEW, MakerBot, RoboCell,
-                        CNC Motion, Cura 3D Printing Software, Microsoft Office, Adobe Illustrator, Inventor Certified Professional,
-                        Autodesk Inventor, Zoom Video Communications
-                    </li>
-                </ul>
+                                    <t style='font-size:2vw;'>Frameworks/Softwares</t>
+                                    <ul>
+                                        <li style='font-size:1.2vw;'> <a href="https://www.djangoproject.com/" target="blank"> Django </a> (Front End & Back End)</li>
+                                        <li style='font-size:1.2vw;'> <a href="https://www.arduino.cc/" target="'blank"> Arduino </a> Programming Platform</li>
+                                    </ul>
 
-            </div>
-        </div>
-        <div class = 'col -md=6'>
-            <div class = 'row h-50'>
-                <div class = 'card card-body border-info'>
-                    <h3><u><b>Short Term Goals</b></u></h3>
-                    <p>
-                        After programming for over two years, I am ready to apply my skills in a professional setting.
-                        From my experiences with past jobs and internships as well as projects, I believe that I am ready to
-                        bring my skills to a team that I will be able to have a positive impact. I am looking to expand my
-                        knowledge through experience that not only relate to programming but other fields as well.
-
-                    </p>
+                                    <t style='font-size:2vw;'>Additional Skills</t>
+                                    <ul>
+                                        <li style='font-size:1.2vw;'>
+                                            Autodesk Fusion 360, Revit Platform, Arduino Platform, VEX Platform, LabVIEW, MakerBot, RoboCell,
+                                            CNC Motion, Cura 3D Printing Software, Microsoft Office, Adobe Illustrator, Inventor Certified Professional,
+                                            Autodesk Inventor, Zoom Video Communications
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class = 'col -md=6'>
+                                <div class = 'card card-body text-black bg-transparent' style='border: none;'>
+                                    <h style='color:#a3d31e; text-align: left;font-size:2vw;font-weight: bold;'>Progrmming Knowledge Distribution</h>
+                                    <div id='chart_wrap'>
+                                        <div id="piechart_3d" ></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-                <br>
-            <div class = 'row h-40'>
-                <div class = 'card card-body border-info'>
-                <h3><u><b>Long Term Goals</b></u></h3>
-                    <p>
-                        From a young age, I loved to take electronics apart to explore the mystery behind their simple exterior. It has been this curiosity that has driven me to
-                        become a programmer. I want to be able to understand the complicated languages used by the devices that we rely on every day so that I can design and
-                        program my own devices/applications for all to use.
-                    </p>
-            </div>
+            <div class="carousel-item" id='Kevin_Sec'>
+
+                <div id ='Slide2'>
+                    <div class="flex-container">
+                        <div class = 'row' >
+                                <div class = 'card card-body mb-5 text-black bg-transparent' style='border: none;'>
+                                    <h1 class="rainbow rainbow_text_animated" style='font-size:2.5vw; font-weight: bold;' id = 'About_me'><b>Short Term Goals</b></h1>
+                                    <p style='text-align: left; font-size:1.5vw; text-indent: 3vw; color: #a3d31e; line-height: 3vw;'>
+                                        After programming for over two years, I am ready to apply my skills in a professional setting. 
+                                        From my experiences with past jobs and internships as well as projects, I believe that I am ready to 
+                                        bring my skills to a team that I will be able to have a positive impact. I am looking to expand my 
+                                        knowledge through experience that not only relate to programming but other fields as well.
+                                    </p><br>
+                                    <h1 class="rainbow rainbow_text_animated" style='font-size:2.5vw; font-weight: bold;' id = 'About_me'><b>Long Term Goals</b></h1>
+                                    <p style='text-align: left; font-size:1.5vw; text-indent: 3vw; color: #a3d31e; line-height: 3vw;'>
+                                        From a young age, I loved to take electronics apart to explore the mystery behind their simple exterior. 
+                                        It has been this curiosity that has driven me to become a programmer. I want to be able to understand the 
+                                        complicated languages used by the devices that we rely on every day so that I can design and program my own 
+                                        devices/applications for all to use.
+                                    </p>
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="carousel-caption d-none d-md-block">
+                    <h3>Third Slide</h3>
+                    <p>This is a description for the first slide.</p>
+                </div> -->
             </div>
         </div>
     </div>
-    <br>
-
-    <div class = 'row'>
-        <div class = 'card card-body border-info'>
-            <h3><b><u>Projects</u></b></h3><br>
-
-            <a href="http://cliqueio.com/" target="_blank" class="project" style="color:#3452eb;"><h5 style="text-align:left;"><b>Clique</b> </a> (Django: Python, HTML(Basic), CSS(Basic)) (Group Project)<span style="float:right;"> Spring 2020 </span> </h5>
-            <ul>
-                <li>Created a Website using Django(Open-Source Web Framework)</li>
-                <li>Learned basic backend work using python</li>
-                <li>Learned basic frontend work and styling using HTML and CSS</li>
-                <li>Utilized: Pyhton, HTML, CSS</li>
-            </ul>
-            <br>
-            <a href="{% url 'homepage' %}" class="project" style="color:#3452eb;"><h5 style="text-align:left;"><b>Personal Website</a></b> (Python, Django: HTML) (Personal Project)<span style="float:right;"> Spring 2020 </span> </h5>
-            <ul>
-                <li>Created a Website using HTML and linked old projects</li>
-                <li>Learned basic front and backend work as well as styling</li>
-                <li>Utilized: HTML, Python</li>
-            </ul>
-            <br>
-
-            <a href="{% url 'login' %}" class="project" style="color:#3452eb;"><h5 style="text-align:left;"><b>Train Customer Support System</a></b> (Python) (Personal Project)<span style="float:right;"> Fall 2019 </span> </h5>
-            <ul>
-                <li>Developed a program using Java to organize train stops</li>
-                <li>Analyzes trains and allows for easier understanding of the train routes</li>
-                <li>Utilized: Python, Files, Loops, Classes, Lists, Dictionaries, Functions</li>
-            </ul>
-            <br>
-
-            <a href="{% url 'iFeeder' %}" class="project" style="color:#3452eb;"><h5 style="text-align:left;"><b>iFeeder (The Automatic Pet Feeder)</b> (Product Design) (Group Project)</a><span style="float:right;"> Fall 2019 </span> </h5>
-            <ul>
-                <li>Role: Chief Hardware Engineer & Programmer</li>
-                <li>Designed a self-sufficient, innovative, and cost-efficient product with the ability to dispense food, water, and snacks for a variety of animals.</li>
-                <li>Created professional marketing pitch, prototype, program, advertisement</li>
-                <li>Utilized: Autodesk Fusion 360, Arduino IDE, Microsoft Project, Microsoft Powerpoint, Cura 3D Printing Software, Adobe Illustrator</li>
-            </ul>
-        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
     </div>
-    <br>
-
+     
+    <div>
+        <br>
+    <div class = 'container'>
         <div class = 'row'>
             <div class = 'card card-body border-info'>
-                <h3><b><u>Experiences</u></b></h3><br>
-                <h5><b>Multi-Subject Teacher </b>Leap Education (Job), <i> New York, NY </i> <span style="float:right;">Dec 2018 - Present</span></h5>
-                <ul>
-                    <li>Prepared interactive lessons to facilitate personalized learning for each student</li>
-                    <li>Provided individual structure to lessons to assist grasping of material, graded classwork, and homework, and managed classroom order</li>
+                <h3 style='text-align: center;font-size: 2vw'><b><u>Projects</u></b></h3><br>
+    
+                <a href="http://cliqueio.com/" target="_blank" class="project" style="color:#3452eb;"><h5 style="text-align:left;font-size: 1.3vw;"><b>Clique</b> </a> (Django: Python, HTML(Basic), CSS(Basic)) (Group Project)<span style="float:right;"> Spring 2020 </span> </h5>
+                <ul style='font-size: 1.1vw;'>
+                    <li>Created a Website using Django(Open-Source Web Framework)</li>
+                    <li>Learned basic backend work using python</li>
+                    <li>Learned basic frontend work and styling using HTML and CSS</li>
+                    <li>Utilized: Pyhton, HTML, CSS</li>
                 </ul>
                 <br>
-
-                <h5><b>T4 Education and Technology Intern </b> Brooklyn Public Library Leonard Branch, <i> Brooklyn, NY </i> <span style="float:right;">June 2018</span></h5>
-                <ul>
-                    <li>Provided technology to partons including personalized technology usage, troubleshooting hardware, and software issues.</li>
-                    <li>Conducted programming classes for kids ages 7-12 on coding skills and robotics using LEGO.</li>
-                    <li>Supervised and led NYC First Lego Robotics Team which competed in a borough tournament.</li>
+                <a href="{% url 'homepage' %}" class="project" style="color:#3452eb;"><h5 style="text-align:left;font-size: 1.3vw;"><b>Personal Website</a></b> (Python, Django: HTML) (Personal Project)<span style="float:right;"> Spring 2020 </span> </h5>
+                <ul style='font-size: 1.1vw;'>
+                    <li>Created a Website using HTML and linked old projects</li>
+                    <li>Learned basic front and backend work as well as styling</li>
+                    <li>Utilized: HTML, Python</li>
                 </ul>
                 <br>
-
-                <h5><b>Club President: United Nations Awareness Club</b> Brooklyn Technical High School, <i> Brooklyn, NY </i> <span style="float:right;">June 2019</span></h5>
-                <ul>
-                    <li>Found the club. Planned and organized meetings. Prepared marketing materials.</li>
-                    <li>Raised awareness of problems that the United Nations face to students.</li>
+    
+                <a href="{% url 'login' %}" class="project" style="color:#3452eb;"><h5 style="text-align:left;font-size: 1.3vw;"><b>Train Customer Support System</a></b> (Python) (Personal Project)<span style="float:right;"> Fall 2019 </span> </h5>
+                <ul style='font-size: 1.1vw;'>
+                    <li>Developed a program using Java to organize train stops</li>
+                    <li>Analyzes trains and allows for easier understanding of the train routes</li>
+                    <li>Utilized: Python, Files, Loops, Classes, Lists, Dictionaries, Functions</li>
                 </ul>
                 <br>
+    
+                <a href="{% url 'iFeeder' %}" class="project" style="color:#3452eb;"><h5 style="text-align:left;font-size: 1.3vw;"><b>iFeeder (The Automatic Pet Feeder)</b></a> (Product Design) (Group Project)<span style="float:right;"> Fall 2019 </span> </h5>
+                <ul style='font-size: 1.1vw;'>
+                    <li>Role: Chief Hardware Engineer & Programmer</li>
+                    <li>Designed a self-sufficient, innovative, and cost-efficient product with the ability to <br>dispense food, water, and snacks for a variety of animals.</li>
+                    <li>Created professional marketing pitch, prototype, program, advertisement</li>
+                    <li>Utilized: Autodesk Fusion 360, Arduino IDE, Microsoft Project, Microsoft Powerpoint, <br>Cura 3D Printing Software, Adobe Illustrator</li>
+                </ul>
             </div>
         </div>
-    <br>
+        <br>
+            <div class = 'row'>
+                <div class = 'card card-body border-info'>
+                    <h3 style='text-align: center;font-size: 2vw'><b><u>Experiences</u></b></h3><br>
+                    <h5 style='font-size: 1.3vw;'><b>Multi-Subject Teacher </b>Leap Education (Job), <i> New York, NY </i> <span style="float:right;">Dec 2018 - Present</span></h5>
+                    <ul style='font-size: 1.1vw;'>
+                        <li>Prepared interactive lessons to facilitate personalized learning for each student</li>
+                        <li>Provided individual structure to lessons to assist grasping of material, graded classwork, and homework, and managed classroom order</li>
+                    </ul>
+                    <br>
+    
+                    <h5 style='font-size: 1.3vw;'><b>T4 Education and Technology Intern </b> Brooklyn Public Library Leonard Branch, <i> Brooklyn, NY </i> <span style="float:right;">June 2018</span></h5>
+                    <ul style='font-size: 1.1vw;'>
+                        <li>Provided technology to partons including personalized technology usage, troubleshooting hardware, and software issues.</li>
+                        <li>Conducted programming classes for kids ages 7-12 on coding skills and robotics using LEGO.</li>
+                        <li>Supervised and led NYC First Lego Robotics Team which competed in a borough tournament.</li>
+                    </ul>
+                    <br>
+    
+                    <h5 style='font-size: 1.3vw;'><b>Club President: United Nations Awareness Club</b> Brooklyn Technical High School, <i> Brooklyn, NY </i> <span style="float:right;">June 2019</span></h5>
+                    <ul style='font-size: 1.1vw;'>
+                        <li>Found the club. Planned and organized meetings. Prepared marketing materials.</li>
+                        <li>Raised awareness of problems that the United Nations face to students.</li>
+                    </ul>
+                    <br>
+                </div>
+            </div>
+        <br>
     </div>
-</div>
-    <p id="info">Phone Number: (917) 618-8958 • Email: sxw207@nyu.edu • <a href="www.linkedin.com/in/shixinkevinwu">Linkedin Profile</a> • <a href="https://my.indeed.com/p/shixinw-aqtitv7"> Indeed Profile</a> </p>
+    <div>
+        <p id="info" style='text-align: center;color:#3b0420;font-weight: bold;'>Phone Number: (917) 618-8958 • Email: sxw207@nyu.edu • <a href="http://www.linkedin.com/in/shixinkevinwu" style='color:blue' target="_blank">Linkedin Profile</a> • <a href="https://my.indeed.com/p/shixinw-aqtitv7" style='color:blue' target="_blank"> Indeed Profile</a> • <a href="https://forms.gle/tH1PJQ31EeRm1BRU6" target="_blank" style='color:blue'> Contact Me</a> </p>
+    </div>
+    </div>
 </body>
-
 </html>

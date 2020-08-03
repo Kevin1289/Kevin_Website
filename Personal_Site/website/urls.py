@@ -11,5 +11,5 @@ urlpatterns = [
     url(r'^logout/$', logout_view),
     path('', include('resume_page.urls')),
     path('admin/', admin.site.urls),
-    path('', include('Train_Website.urls')),
+    path('Train/', include('Train_Website.urls')),
 ]

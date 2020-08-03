@@ -1,0 +1,35 @@
+body{
+	background-color: #b41b1b!important;
+	text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+}
+
+p{
+    text-indent: 50px;
+}
+
+p3{
+    text-align: left;
+}
+
+#info{
+    text-align: center!important;
+}
+
+#profile-pic{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#profile-wrapper{
+    text-align: center;
+}
