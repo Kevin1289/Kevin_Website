@@ -49,7 +49,7 @@ def Train_Choose_Service(request):
     if request.method == 'POST':
         job = request.POST.get('Service')
         if job == "all stops":
-            return HttpResponseRedirect('/all_stops')
+            return HttpResponseRedirect('all_stops')
             #return HttpResponse('ALL STOPS')
             #show_stops() 
         elif job == "common station":
@@ -224,8 +224,6 @@ def History(request):
     args = {'organized_his': organized_his}
     return render(request, 'Train_Website/history.html', args)
     #return HttpResponse('hereeeeeeeeee')
-
-
 
 def logout_view(request):
     try:
